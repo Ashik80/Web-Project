@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Carry fresh</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/Home/site.css" />
+    <link rel="stylesheet" href="~/css/Home/responsive.css" />
+</head>
+
+<body>
+    <div class="upper-header">
+        <a href="login/login.html"> <button class="btn btn-primary btn-1"><i class="fas fa-user-hard-hat"></i>
+                Login</button></a>
+
+        <a href="signup/signup.html"><button class="btn btn-primary btn-1"><i class="fas fa-user-hard-hat"></i> Sign
+                Up</button></a>
+
+        <button class="btn btn-2"><i class="fas fa-shopping-basket"></i> Shopping busket <br />
+            <span>£0.00</span></button>
+
+    </div>
+
+    <nav>
+        <div class="navbar">
+            <img src="img/Logo1o.png" alt="logo" class="logo" />
+            <div class="menu-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span
+                    class="icon-bar"></span></div>
+            <div class="menu">
+                <ul>
+                    <li><a href="Home.html">HOME</a></li>
+                    <li><a href="#">SHOP</a></li>
+                    <li><a href="#">ABOUT </a></li>
+
+                    <li><a href="#">CONTACT </a></li>
+                </ul>
+
+            </div>
+
+
+            <div class="social-icon">
+                <a class="" href="https://fb.com/templatemo" target="_blank" rel="sponsored"><i
+                        class="fab fa-facebook-f "></i></a>
+
+                <a class="" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter  fa-fw me-2"></i></a>
+                <a class="" href="https://www.google-plus-g.com/" target="_blank"><i
+                        class="fab fa-google-plus-g  fa-fw me-2"></i></a>
+
+                <a class=" " href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin  fa-fw"></i></a>
+            </div>
+        </div>
+    </nav>
+
+
+    @RenderBody()
+
+
+    <div class="upper-footer">
+
+        <div class="row">
+
+            <div class="col-sm-6">
+
+                <img src="img/Logo1o.png" alt="logo" class="up-footer-logo" />
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a type specimen book</p>
+                <div class="u-footer-social-icon">
+                    <a class="" href="https://fb.com/templatemo" target="_blank" rel="sponsored"><i
+                            class="fab fa-facebook-f f-padding "></i></a>
+
+                    <a class="" href="https://twitter.com/" target="_blank"><i
+                            class="fab fa-twitter  fa-fw me-2"></i></a>
+                    <a class="" href="https://www.google-plus-g.com/" target="_blank"><i
+                            class="fab fa-google-plus-g  fa-fw me-2"></i></a>
+
+                    <a class=" " href="https://www.linkedin.com/" target="_blank"><i
+                            class="fab fa-linkedin  fa-fw"></i></a>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <h4>Category</h4>
+                <a href="h">Vegetables</a>
+                <a href="h">Fruits</a>
+                <a href="h">Meat</a>
+                <a href="h">Canned Organic</a>
+                <a href="h">Organic</a>
+                <a href="h">Mushrooms</a>
+                <a href="h">Organic Juice</a>
+
+            </div>
+            <div class="col-sm-3">
+                <h4>Contact</h4>
+                <a class=" text-decoration-none " href="tel:+91 95000 77397">+91 95000 77397</a>
+                <p>Your address here</p>
+                <p>info@yourdomain.com</p>
+
+            </div>
+        </div>
+        <hr />
+    </div>
+
+
+
+    <div class="footer">
+
+        <p>&copy;2021 All ORGANIC SHOP</p>
+
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

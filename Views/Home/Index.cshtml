@@ -1,0 +1,443 @@
+﻿@model IEnumerable<web_project.Models.Product>
+
+@{
+    Layout = null;
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Carry fresh</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/Home/site.css" />
+    <link rel="stylesheet" href="~/css/Home/responsive.css" />
+</head>
+
+<body>
+    <div class="upper-header">
+        @{
+
+
+
+
+
+
+
+            var user = (System.Security.Claims.ClaimsIdentity)User.Identity;
+
+
+
+
+
+
+
+            var userName = user.FindFirst("Name")?.Value;
+        }
+        @if (userName != null)
+
+
+
+        {
+            <div class="row justify-content-end">
+                <form method="post" asp-controller="Auth" asp-action="Logout"> <button
+                    class="btn btn-primary btn-1 btn-lg"><i class="fas fa-user-hard-hat"></i>
+                        Logout</button></form>
+
+                <a asp-controller="Cart" asp-action="Index"><button class="btn btn-2"><i class="fas fa-shopping-basket"></i>
+                        Shopping busket <br />
+                        <span>£0.00</span></button></a>
+            </div>
+
+
+        }
+
+
+
+        else
+
+
+
+        {
+            <a asp-controller="Auth" asp-action="Login"> <button class="btn btn-primary btn-1"><i
+                    class="fas fa-user-hard-hat"></i>
+                    Login</button></a>
+
+            <a asp-controller="Auth" asp-action="Signup"><button class="btn btn-primary btn-1"><i
+                    class="fas fa-user-hard-hat"></i> Sign
+                    Up</button></a>
+
+        }
+
+    </div>
+
+    <nav>
+        <div class="navbar">
+            <img src="img/Logo1o.png" alt="logo" class="logo" />
+            <div class="menu-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span
+                    class="icon-bar"></span></div>
+            <div class="menu">
+                <ul>
+                    <li><a asp-controller="Home" asp-action="Index">HOME</a></li>
+                    <li><a href="#">SHOP</a></li>
+                    <li><a href="#">ABOUT </a></li>
+
+                    <li><a href="#">CONTACT </a></li>
+                </ul>
+
+            </div>
+
+
+            <div class="social-icon">
+                <a class="" href="https://fb.com/templatemo" target="_blank" rel="sponsored"><i
+                        class="fab fa-facebook-f "></i></a>
+
+                <a class="" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter  fa-fw me-2"></i></a>
+                <a class="" href="https://www.google-plus-g.com/" target="_blank"><i
+                        class="fab fa-google-plus-g  fa-fw me-2"></i></a>
+
+                <a class=" " href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin  fa-fw"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="under-header">
+        <div class="under-header-content">
+
+            <div class="un-h">
+                <h1>New Arivals</h1>
+
+                <a href="z"><button>Shop Now</button></a>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="content-1">
+
+        <h1>Featured Categories</h1>
+
+        <div class="row ">
+
+            <div class="col c1-col1">
+                <div class="img-content1">
+
+                    <a href="z"><button class="btn">Vegetables</button></a>
+
+                </div>
+            </div>
+
+            <div class="col c1-col2">
+                <div class="img-content2">
+
+                    <a href="z"><button class="btn">Fresh Fruits</button></a>
+
+                </div>
+            </div>
+
+            <div class="col c1-col3">
+
+                <div class="img-content3">
+                    <a href="z"><button class="btn">GreenHouse</button></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="product">
+
+        <h1>New Products</h1>
+        <div class="row">
+
+            <div class="col">
+                <div class="image-sp">
+                    <img src="~/img/download (1).jpg" alt="image" class="img" />
+                </div>
+                <p>Organic,Organic Juice</p>
+                <h4>Green Beans-1 kg</h4>
+                <span>£25.05</span>
+            </div>
+            <div class="col">
+
+                <div class="image">
+                    <button class="btn ">SALE!</button>
+                    <img src="~/img/images.jpg" alt="image" class="img" />
+                </div>
+                <p>Fresh Onion, Oatmeal</p>
+                <h4>Tomato</h4>
+                <span>£26.00</span>
+            </div>
+            <div class="col ">
+                <div class="image-sp">
+
+                    <img src="img/grocery-food-items-0-295123.jpg" alt="image" class="img" />
+                </div>
+                <p>Mushrooms, Vegetables</p>
+                <h4>Organic Lentil Sprouts</h4>
+                <span>£19.00</span>
+            </div>
+            <div class="col tb">
+
+                <div class="image">
+                    <button class="btn ">SALE!</button>
+                    <img src="img/images (1).jpg" alt="image" class="img" />
+                </div>
+                <p>Fruit</p>
+                <h4>Avocado Hass</h4>
+                <span>£14.00</span>
+            </div>
+            <div class="col tb">
+                <div class="image-sp">
+
+                    <img src="img/download.jpg" alt="image" class="img" />
+                </div>
+                <p> Organic Food,Fruits</p>
+                <h4>Apple</h4>
+                <span>£19.05</span>
+            </div>
+        </div>
+
+    </div>
+    <div class="product">
+
+        <div class="row">
+
+            <div class="col">
+                <div class="image-sp">
+                    <img src="img/ladys-finger-3445963_640.jpg" alt="image" class="img" />
+                </div>
+                <p>Organic,Organic Juice</p>
+                <h4>Ladys-finger</h4>
+                <span>£25.05</span>
+            </div>
+            <div class="col">
+
+                <div class="image">
+                    <button class="btn ">SALE!</button>
+                    <img src="img/ginger-1738098_640.jpg" alt="image" class="img" />
+                </div>
+                <p>Fresh Onion, Oatmeal</p>
+                <h4>Ginger</h4>
+                <span>£26.00</span>
+            </div>
+            <div class="col ">
+                <div class="image-sp">
+
+                    <img src="img/cucumber-685704_640.jpg" alt="image" class="img" />
+                </div>
+                <p> Vegetables</p>
+                <h4>Cucumber</h4>
+                <span>£19.00</span>
+            </div>
+            <div class="col tb">
+
+                <div class="image">
+                    <button class="btn ">SALE!</button>
+                    <img src="img/guava-6031984_640.jpg" alt="image" class="img" />
+                </div>
+                <p>Fruit</p>
+                <h4>Guava</h4>
+                <span>£14.00</span>
+            </div>
+            <div class="col tb">
+                <div class="image-sp">
+
+                    <img src="img/food-1239241_640.jpg" alt="image" class="img" />
+                </div>
+                <p> Organic Food,Fruits</p>
+                <h4>Mango</h4>
+                <span>£19.05</span>
+            </div>
+        </div>
+
+    </div>
+    <div class="product">
+
+        <div class="row">
+
+            <div class="col">
+                <div class="image-sp">
+                    <img src="img/onions-1397037_640.jpg" alt="image" class="img" />
+                </div>
+                <p>Fresh Onion</p>
+                <h4>Onions</h4>
+                <span>£25.05</span>
+            </div>
+            <div class="col">
+
+                <div class="image">
+                    <button class="btn ">SALE!</button>
+                    <img src="img/jack-fruit-4215710_640.jpg" alt="image" class="img" />
+                </div>
+                <p>Fresh Fruit</p>
+                <h4>Jack-fruit</h4>
+                <span>£26.00</span>
+            </div>
+            <div class="col ">
+                <div class="image-sp">
+
+                    <img src="img/pumpkin-1768857_1280.jpg" alt="image" class="img" />
+                </div>
+                <p>Mushrooms, Vegetables</p>
+                <h4>pumpkin</h4>
+                <span>£19.00</span>
+            </div>
+            <div class="col tb">
+
+                <div class="image">
+                    <button class="btn ">SALE!</button>
+                    <img src="img/watermelons-5318938_640.jpg" alt="image" class="img" />
+                </div>
+                <p>Fruit</p>
+                <h4>Watermelon</h4>
+                <span>£14.00</span>
+            </div>
+            <div class="col tb">
+                <div class="image-sp">
+
+                    <img src="img/strawberry-1330459_1280.jpg" alt="image" class="img" />
+                </div>
+                <p> Organic Food,Fruits</p>
+                <h4>Strawberry</h4>
+                <span>£19.05</span>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <div class="product">
+
+        <div class="row">
+
+            @foreach (var item in Model)
+            {
+                <div class="col">
+                    <a asp-controller="Home" asp-action="Product" asp-route-id="@item.ID">
+                        <div class="image">
+                            <button class="btn">SALE!</button>
+                            <img src="~/img/@item.Image" alt="image" class="img" />
+                        </div>
+                        <p class="text-dark">@item.Category</p>
+                        <h4 class="text-dark">@item.Name</h4>
+                        <span class="text-dark">£@item.Price</span>
+                    </a>
+                </div>
+            }
+
+        </div>
+
+
+
+    </div>
+
+
+
+    <div class="last-content">
+
+        <div class="row">
+
+            <div class="col">
+
+                <div class="p-i">
+
+                    <i class="fas fa-money-check-alt"></i>
+                </div>
+                <div class="p-c">
+                    <h5>Quick Payment</h5>
+                    <p>100% secure payment</p>
+                </div>
+
+            </div>
+
+            <div class="col last-content-col2">
+
+                <div class="p-i">
+
+                    <i class="fas fa-truck"></i>
+
+                </div>
+                <div class="p-c">
+                    <h5>Free Delevary</h5>
+                    <p>On all domestic orders</p>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <div class="upper-footer">
+
+        <div class="row">
+
+            <div class="col-sm-6">
+
+                <img src="img/Logo1o.png" alt="logo" class="up-footer-logo" />
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a type specimen book</p>
+                <div class="u-footer-social-icon">
+                    <a class="" href="https://fb.com/templatemo" target="_blank" rel="sponsored"><i
+                            class="fab fa-facebook-f f-padding "></i></a>
+
+                    <a class="" href="https://twitter.com/" target="_blank"><i
+                            class="fab fa-twitter  fa-fw me-2"></i></a>
+                    <a class="" href="https://www.google-plus-g.com/" target="_blank"><i
+                            class="fab fa-google-plus-g  fa-fw me-2"></i></a>
+
+                    <a class=" " href="https://www.linkedin.com/" target="_blank"><i
+                            class="fab fa-linkedin  fa-fw"></i></a>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <h4>Category</h4>
+                <a href="h">Vegetables</a>
+                <a href="h">Fruits</a>
+                <a href="h">Meat</a>
+                <a href="h">Canned Organic</a>
+                <a href="h">Organic</a>
+                <a href="h">Mushrooms</a>
+                <a href="h">Organic Juice</a>
+
+            </div>
+            <div class="col-sm-3">
+                <h4>Contact</h4>
+                <a class=" text-decoration-none " href="tel:+91 95000 77397">+91 95000 77397</a>
+                <p>Your address here</p>
+                <p>info@yourdomain.com</p>
+
+            </div>
+        </div>
+        <hr />
+    </div>
+
+
+
+    <div class="footer">
+
+        <p>&copy;2021 All ORGANIC SHOP</p>
+
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+</body>
+
+</html>

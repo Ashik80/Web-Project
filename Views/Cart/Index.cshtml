@@ -1,0 +1,434 @@
+@{
+
+    Layout = null;
+
+    ViewData["Title"] = "Cart";
+}
+
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+
+    <meta charset="utf-8">
+
+
+    <title>@ViewData["Title"]</title>
+
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+
+
+
+    <!-- Additional CSS Files -->
+
+
+    <link rel="stylesheet" href="~/css/Cart/style.css">
+    <link rel="stylesheet" href="~/css/Cart/responsive.css">
+
+
+</head>
+
+<body>
+
+    <div class="upper-header">
+        @{
+
+
+
+
+
+
+
+            var user = (System.Security.Claims.ClaimsIdentity)User.Identity;
+
+
+
+
+
+
+
+            var userName = user.FindFirst("Name")?.Value;
+        }
+        @if (userName != null)
+
+
+
+        {
+            <div class="row justify-content-end">
+                <form method="post" asp-controller="Auth" asp-action="Logout"> <button
+                    class="btn btn-primary btn-1 btn-lg"><i class="fas fa-user-hard-hat"></i>
+                        Logout</button></form>
+
+                <a asp-controller="Cart" asp-action="Index"><button class="btn btn-2"><i class="fas fa-shopping-basket"></i>
+                        Shopping busket <br />
+                        <span>£0.00</span></button></a>
+            </div>
+
+        }
+
+
+
+        else
+
+
+
+        {
+            <a asp-controller="Auth" asp-action="Login"> <button class="btn btn-primary btn-1"><i
+                    class="fas fa-user-hard-hat"></i>
+                    Login</button></a>
+
+            <a asp-controller="Auth" asp-action="Signup"><button class="btn btn-primary btn-1"><i
+                    class="fas fa-user-hard-hat"></i> Sign
+                    Up</button></a>           
+
+        }
+
+    </div>
+
+    <nav>
+        <div class="navbar">
+            <img src="~/img/Logo1o.png" alt="logo" class="logo" />
+            <div class="menu-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span
+                    class="icon-bar"></span></div>
+            <div class="menu">
+                <ul>
+                    <li><a asp-controller="Home" asp-action="Index">HOME</a></li>
+                    <li><a href="#">SHOP</a></li>
+                    <li><a href="#">ABOUT </a></li>
+
+                    <li><a href="#">CONTACT </a></li>
+                </ul>
+
+            </div>
+
+
+            <div class="social-icon">
+                <a class="" href="https://fb.com/templatemo" target="_blank" rel="sponsored"><i
+                        class="fab fa-facebook-f "></i></a>
+
+                <a class="" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter  fa-fw me-2"></i></a>
+                <a class="" href="https://www.google-plus-g.com/" target="_blank"><i
+                        class="fab fa-google-plus-g  fa-fw me-2"></i></a>
+
+                <a class=" " href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin  fa-fw"></i></a>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div class="content-1">
+
+
+        <table class="table  table-1 ">
+
+            <thead>
+                <tr>
+                    <th class="th1">Product</th>
+                    <th class="th2">Price</th>
+                    <th class="th2">Quantity</th>
+
+                    <th class="th3">Subtotal</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>
+                        <h6>Apple</h6>
+                        <p><span>Category:</span> Organic Food,Fruits</p>
+
+                    </td>
+
+                    <td>
+                        <h6 class="pd-top">$19.00 </h6>
+                    </td>
+                    <td class="quantity">
+                        <p class="mr-top"> <button class="minus-btn">-</button>1<button class="plus-btn">+</button> </p>
+                    </td>
+                    <td>
+                        <h6 class="float-left pd-top">$19.00 </h6>
+                        <i class="fas fa-times float-right "></i>
+                    </td>
+
+
+                </tr>
+                <tr>
+                    <td>
+                        <h6>Apple</h6>
+                        <p><span>Category:</span> Organic Food,Fruits</p>
+
+                    </td>
+
+                    <td>
+                        <h6 class="pd-top">$19.00 </h6>
+                    </td>
+                    <td class="quantity">
+                        <p class="mr-top"> <button class="minus-btn">-</button>1<button class="plus-btn">+</button> </p>
+                    </td>
+                    <td>
+                        <h6 class="float-left pd-top">$19.00 </h6>
+                        <i class="fas fa-times float-right "></i>
+                    </td>
+
+
+                </tr>
+                <tr>
+                    <td>
+                        <h6>Apple</h6>
+                        <p><span>Category:</span> Organic Food,Fruits</p>
+
+                    </td>
+
+                    <td>
+                        <h6 class="pd-top">$19.00 </h6>
+                    </td>
+                    <td class="quantity">
+                        <p class="mr-top"> <button class="minus-btn">-</button>1<button class="plus-btn">+</button> </p>
+                    </td>
+                    <td>
+                        <h6 class="float-left pd-top">$19.00 </h6>
+                        <i class="fas fa-times float-right "></i>
+                    </td>
+
+
+                </tr>
+                <tr>
+                    <td>
+                        <input type="textarea" class="coupon" placeholder="Coupon code" />
+                        <a href="z"><button type="submit" class="lst-rw-btn1 btn">Apply Coupon</button></a>
+
+                    </td>
+                    <td>
+
+                    </td>
+                    <td>
+                        <a asp-action="Index" asp-controller="Home">
+                            <button type="submit" class="lst-rw-btn2 btn">Back to Shop</button></a>
+                    </td>
+                    <td>
+                        <a asp-action="Billing" asp-controller="Cart">
+                            <button type="submit" class="lst-rw-btn3 btn">Proceed to Checkout</button></a>
+                    </td>
+                </tr>
+
+
+            </tbody>
+        </table>
+
+
+
+
+    </div>
+
+
+
+    <div class="content-2">
+
+        <h2>Cart Total</h2>
+
+
+        <table class="table table-bordered table-2 ">
+            <tbody>
+                <tr>
+
+
+
+                    <td class="cl1">
+                        <h6>Subtotal</h6>
+                    </td>
+                    <td class="">
+                        <h6>$127.00 </h6>
+                    </td>
+
+
+
+                </tr>
+
+
+
+                <tr>
+                    <td class="cl1">
+                        <h6 class="r1-clm-1">Shipping</h6>
+
+
+                    </td>
+
+                    <td>
+                        <h6 class="r1-clm-2">Free Shipping</h6>
+
+                        <br />
+
+                        <h6 class="r2-clm-2">Shipping to 200 N bxel st ARt#1344 Dhaka 126005 </h6>
+
+                        <h6 class="">Change Address</h6>
+                    </td>
+
+
+
+
+                </tr>
+                <tr>
+                    <td class="cl1">
+                        <h6>Tax</h6>
+
+
+                    </td>
+
+                    <td>
+                        <h6 class="">$12.05</h6>
+
+
+                    </td>
+
+
+
+
+                </tr>
+                <tr>
+                    <td class="cl1">
+                        <h6>Total</h6>
+
+
+                    </td>
+
+                    <td>
+                        <h6 class="">$139.05</h6>
+
+
+                    </td>
+
+
+
+
+                </tr>
+
+
+
+            </tbody>
+
+
+        </table>
+
+        <a asp-action="Billing" asp-controller="Cart"> <button type="submit" class="tbl2-btn btn">Proceed to
+                Checkout</button></a>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <div class="upper-footer">
+
+        <div class="row">
+
+            <div class="col-sm-6">
+
+                <h1>ALL ORGANIC</h1>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a type specimen book</p>
+                <div class="u-footer-social-icon">
+                    <a class="" href="https://fb.com/templatemo" target="_blank" rel="sponsored"><i
+                            class="fab fa-facebook-f f-padding "></i></a>
+
+                    <a class="" href="https://twitter.com/" target="_blank"><i
+                            class="fab fa-twitter  fa-fw me-2"></i></a>
+                    <a class="" href="https://www.google-plus-g.com/" target="_blank"><i
+                            class="fab fa-google-plus-g  fa-fw me-2"></i></a>
+
+                    <a class=" " href="https://www.linkedin.com/" target="_blank"><i
+                            class="fab fa-linkedin  fa-fw"></i></a>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <h4>Category</h4>
+                <a href="h">Vegetables</a>
+                <a href="h">Fruits</a>
+                <a href="h">Meat</a>
+                <a href="h">Canned Organic</a>
+                <a href="h">Organic</a>
+                <a href="h">Mushrooms</a>
+                <a href="h">Organic Juice</a>
+
+            </div>
+            <div class="col-sm-3">
+                <h4>Contact</h4>
+                <a class=" text-decoration-none " href="tel:+91 95000 77397">+91 95000 77397</a>
+                <p>Your address here</p>
+                <p>info@yourdomain.com</p>
+
+            </div>
+        </div>
+        <hr />
+    </div>
+
+
+
+    <div class="footer">
+
+        <p>&copy;2021 All ORGANIC SHOP</p>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- JavaScript Files -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
+
+    <script type="text/javascript">
+
+        var menu = $(".menu");
+        $(window).resize(function () {
+            $(".menu-toggle").removeClass("active");
+            if ($(window).innerWidth() > 600) {
+                menu.show();
+            } else {
+                menu.hide();
+            }
+        });
+        $(".menu-toggle").click(function () {
+            $(this).toggleClass("active");
+            menu.slideToggle();
+        })
+        $(".open-submenu").click(function () {
+            $(this).toggleClass("active");
+            $(this).next("ul").slideToggle();
+            $(this).children(".arrow").toggleClass("down up");
+        });
+
+    </script>
+</body>
+
+</html>

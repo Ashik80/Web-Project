@@ -1,0 +1,178 @@
+
+
+/*		Default Layout: 960px. 
+		Gutters: 24px.
+		Outer margins: 48px.
+		Leftover space for scrollbars @1024px: 32px.
+-------------------------------------------------------------------------------
+cols    1     2      3      4      5      6      7      8      9      10
+px      68    160    252    344    436    528    620    712    804    896    */
+
+
+
+
+
+/*		Tablet Layout: 768px.
+		Gutters: 24px.
+		Outer margins: 28px.
+		Inherits styles from: Default Layout.
+-----------------------------------------------------------------
+cols    1     2      3      4      5      6      7      8
+px      68    160    252    344    436    528    620    712    */
+
+@media only screen and (min-width: 768px) and (max-width: 960px) {
+	
+	.logo {
+    width: 163px;
+    float: left;
+    display: inline-block;}
+	
+	.social-icon{
+		display:none;
+	}
+	.tb{
+		width:250.633px !important;
+	}
+	.col {
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 33%;
+}
+}
+
+
+
+/*		Mobile Layout: 320px.
+		Gutters: 24px.
+		Outer margins: 34px.
+		Inherits styles from: Default Layout.
+---------------------------------------------
+cols    1     2      3
+px      68    160    252    */
+
+@media only screen and (max-width: 767px) {
+	
+	
+	.btn-2 {
+    border: none;
+    padding: 10px 18px;
+    background: #0069D9;
+    color: white;
+    outline: none;
+    margin-top: 7px;
+    margin-right: 4px;
+}
+	
+	
+	
+	.logo {
+    width: 163px;
+    float: left;
+    display: inline-block;
+}
+
+nav .open-submenu:hover, nav .open-submenu.active, nav .menu-toggle.active {
+    background: #6A6666;
+    transition: background-color .5s;
+}
+
+	.social-icon{
+	display:none;
+	}
+	nav .menu-toggle {
+    cursor: pointer;
+
+    float: right;
+    padding: 12px;
+    margin: 10px 0;
+    background:#6A6666;
+    transition: background-color .5s;
+}
+.product h1 {
+    padding-bottom: 4%;
+    text-align: center;
+}
+.upper-footer h1 {
+    color: green;
+    padding-bottom: 40px;
+    padding-top: 20px;
+}
+.upper-footer p {
+    color: white;
+    padding-bottom: 15px;
+    width: 99%;
+    padding-right: 8px;
+}
+.upper-footer h4 {
+    color: white;
+    padding-bottom: 20px;
+    padding-top: 30px;
+}
+
+.table{
+	width:100%;
+}
+
+
+
+.c1-col1 {
+    background-image: url("img/vegetables-752153_1280.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+        margin-right: auto;
+    margin-right: 0px;
+}
+.c1-col2 {
+    background-image: url("img/wallpapertip_fruit-wallpaper_50750.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+        margin-right: auto;
+    margin-right: 0px;
+}
+
+.last-content-col2 {
+    border-left: 0px solid #AAA;
+    padding-left: 12px;
+}
+
+
+}
+
+
+
+/*		Wide Mobile Layout: 480px.
+		Gutters: 24px.
+		Outer margins: 22px.
+		Inherits styles from: Default Layout, Mobile Layout.
+------------------------------------------------------------
+cols    1     2      3      4      5
+px      68    160    252    344    436    */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	
+	
+
+}
+
+
+/*	Retina media query.
+	Overrides styles for devices with a 
+	device-pixel-ratio of 2+, such as iPhone 4.
+-----------------------------------------------    */
+
+@media 
+	only screen and (-webkit-min-device-pixel-ratio: 2),
+	only screen and (min-device-pixel-ratio: 2) {
+	
+	
+	
+}

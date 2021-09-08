@@ -1,0 +1,77 @@
+@model web_project.Models.ViewModels.ProductViewModel
+@{
+    Layout = null;
+    ViewData["Title"] = "Edit Product";
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>@ViewData["Title"]</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="~/css/Product/style.css" />
+    <link rel="stylesheet" href="~/css/Product/responsive.css" />
+</head>
+
+<body>
+    <div class="testbox">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <h1>Add New Product</h1>
+            <div class="item">
+
+                <div>
+                    <input asp-for="Name" placeholder="Product Name " />
+                    <span asp-validation-for="Name" style="color: red;"></span>
+                </div>
+            </div>
+            <div class="item">
+
+                <select asp-for="Category">
+                    @foreach (var item in Enum.GetNames(typeof(Category)))
+                    {
+                        <option value="@item">@item</option>
+                    }
+                </select>
+                <span asp-validation-for="Category" style="color: red;"></span>
+            </div>
+
+            <div class="item">
+                <p>Quantity</p>
+                <input asp-for="Quantity" placeholder="kg/gm" />
+                <span asp-validation-for="Quantity" style="color: red;"></span>
+            </div>
+
+
+            <div class="item">
+                <p>Prices</p>
+                <input asp-for="Price" placeholder="£" />
+                <span asp-validation-for="Price" style="color: red;"></span>
+            </div>
+            <div class="item">
+                <p>Product Image</p>
+
+                <input asp-for="Image">
+                <span asp-validation-for="Image" style="color: red;"></span>
+            </div>
+
+
+
+            <div class="btn-block">
+                <button type="submit">Upload</button>
+            </div>
+        </form>
+    </div>
+
+    @section Scripts{
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}    
+    }
+
+</body>
+
+
+</html>

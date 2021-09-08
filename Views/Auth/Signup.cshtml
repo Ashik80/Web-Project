@@ -1,0 +1,75 @@
+@model web_project.Models.ViewModels.SignupViewModel
+
+@{
+    Layout = null;
+    ViewData["Title"] = "Signup";
+}
+
+<!DOCTYPE html>
+<html>
+  <title>@ViewData["Title"]</title>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    
+	
+	<link rel="stylesheet" href="~/css/Signup/style.css">
+    <link rel="stylesheet" href="~/css/Signup/responsive.css">
+	
+  </head>
+  <body>
+    <form asp-action="Signup">
+      <div asp-validation-summary="ModelOnly" style="color: red;"></div>
+      <h1>SIGN UP</h1>
+      <div class="icon">
+        <i class="fas fa-user-circle"></i>
+      </div>
+      <div class="formcontainer">
+      <div class="container">
+	  
+        <label asp-for="FirstName"><strong>First Name</strong></label>
+        <input type="text" placeholder="Enter First name" asp-for="FirstName">
+        <span asp-validation-for="FirstName" style="color: red;"></span>
+		<label asp-for="LastName"><strong>Last Name</strong></label>
+        <input type="text" placeholder="Enter last name" asp-for="LastName">
+        <span asp-validation-for="LastName" style="color: red;"></span>
+		
+		
+        <label asp-for="Email"><strong>E-mail</strong></label>
+        <input type="text" placeholder="Enter E-mail" asp-for="Email">
+        <span asp-validation-for="Email" style="color: red;"></span>
+		
+		
+		<label asp-for="PhoneNumber"><strong>Phone Number </strong></label>
+		  <input type="text" asp-for="PhoneNumber" placeholder="Enter number">
+      <span asp-validation-for="PhoneNumber" style="color: red;"></span>
+		
+		
+		
+		
+		
+        <label asp-for="Password"><strong>Password</strong></label>
+        <input type="password" placeholder="Enter Password" asp-for="Password">
+        <span asp-validation-for="Password" style="color: red;"></span>
+		
+      </div>
+		@* <label for="User"><strong>User </strong></label>
+	  <div class="item">
+         
+          <select>
+		  
+            <option value="">User Type</option>
+            <option value="A">Admin</option>
+            <option value="B">Customar</option>
+            <option value="C">Supporter</option>
+            <option value="D">Delevary man</option>
+			
+          </select>
+        </div> *@
+	  
+	  
+      <button type="submit"><strong>SIGN UP</strong></button>
+      
+    </form>
+  </body>
+</html>

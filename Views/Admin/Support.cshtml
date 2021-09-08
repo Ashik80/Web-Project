@@ -1,0 +1,37 @@
+@{
+    Layout = null;
+    ViewData["Title"] = "Contact Support";
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>@ViewData["Title"]</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="~/css/ContactSupport/style.css">
+    <link rel="stylesheet" href="~/css/ContactSupport/responsive.css">
+</head>
+
+<body>
+    <form action="/action_page.php">
+        <h1>Contact Support</h1>
+        <div class="formcontainer">
+            <hr />
+            <div class="container">
+                <label for="uname"><strong>Name</strong></label>
+                <input type="text" placeholder="Enter Name" name="uname" required>
+                <label for="psw"><strong>ID</strong></label>
+                <input type="password" placeholder="Enter Id" name="psw" required>
+                <label for="psw"><strong>Message</strong></label>
+                <input type="text" placeholder="Enter Message" name="psw" required>
+            </div>
+            <button type="submit">Send</button>
+
+        </div>
+    </form>
+</body>
+
+</html>
