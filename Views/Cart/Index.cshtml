@@ -158,10 +158,10 @@
                             <h6 class="pd-top">$@item.Product.Price </h6>
                         </td>
                         <td class="quantity">
-                            <p class="mr-top"> <button class="minus-btn">-</button>@item.Product.Quantity<button class="plus-btn">+</button> </p>
+                            <p class="mr-top"> <button class="minus-btn">-</button>@item.Quantity<button class="plus-btn">+</button> </p>
                         </td>
                         @{
-                            var prodPrice = item.Product.Quantity*item.Product.Price;
+                            var prodPrice = item.Quantity*item.Product.Price;
                             totalPrice += prodPrice;
                         }
                         <td>
