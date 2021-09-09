@@ -9,6 +9,7 @@ namespace web_project.Data
         public DataContext(DbContextOptions<DataContext> options) : base(options) { }
 
         public DbSet<Product> Products { get; set; }
+        public DbSet<Cart> Cart { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

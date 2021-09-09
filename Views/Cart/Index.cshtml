@@ -1,3 +1,4 @@
+@model IEnumerable<Cart>
 @{
 
     Layout = null;
@@ -65,7 +66,7 @@
             <div class="row justify-content-end">
                 <form method="post" asp-controller="Auth" asp-action="Logout"> <button
                     class="btn btn-primary btn-1 btn-lg"><i class="fas fa-user-hard-hat"></i>
-                        Logout</button></form>
+                        @userName, Logout</button></form>
 
                 <a asp-controller="Cart" asp-action="Index"><button class="btn btn-2"><i class="fas fa-shopping-basket"></i>
                         Shopping busket <br />
@@ -87,7 +88,7 @@
 
             <a asp-controller="Auth" asp-action="Signup"><button class="btn btn-primary btn-1"><i
                     class="fas fa-user-hard-hat"></i> Sign
-                    Up</button></a>           
+                    Up</button></a>
 
         }
 
@@ -141,85 +142,36 @@
                 </tr>
             </thead>
             <tbody>
+                @{
+                    decimal totalPrice = 0;
+                }
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <h6>@item.Product.Name</h6>
+                            <p><span>Category:</span> @item.Product.Category</p>
 
-                <tr>
-                    <td>
-                        <h6>Apple</h6>
-                        <p><span>Category:</span> Organic Food,Fruits</p>
+                        </td>
 
-                    </td>
-
-                    <td>
-                        <h6 class="pd-top">$19.00 </h6>
-                    </td>
-                    <td class="quantity">
-                        <p class="mr-top"> <button class="minus-btn">-</button>1<button class="plus-btn">+</button> </p>
-                    </td>
-                    <td>
-                        <h6 class="float-left pd-top">$19.00 </h6>
-                        <i class="fas fa-times float-right "></i>
-                    </td>
-
-
-                </tr>
-                <tr>
-                    <td>
-                        <h6>Apple</h6>
-                        <p><span>Category:</span> Organic Food,Fruits</p>
-
-                    </td>
-
-                    <td>
-                        <h6 class="pd-top">$19.00 </h6>
-                    </td>
-                    <td class="quantity">
-                        <p class="mr-top"> <button class="minus-btn">-</button>1<button class="plus-btn">+</button> </p>
-                    </td>
-                    <td>
-                        <h6 class="float-left pd-top">$19.00 </h6>
-                        <i class="fas fa-times float-right "></i>
-                    </td>
+                        <td>
+                            <h6 class="pd-top">$@item.Product.Price </h6>
+                        </td>
+                        <td class="quantity">
+                            <p class="mr-top"> <button class="minus-btn">-</button>@item.Product.Quantity<button class="plus-btn">+</button> </p>
+                        </td>
+                        @{
+                            var prodPrice = item.Product.Quantity*item.Product.Price;
+                            totalPrice += prodPrice;
+                        }
+                        <td>
+                            <h6 class="float-left pd-top">$@prodPrice </h6>
+                            <i class="fas fa-times float-right "></i>
+                        </td>
 
 
-                </tr>
-                <tr>
-                    <td>
-                        <h6>Apple</h6>
-                        <p><span>Category:</span> Organic Food,Fruits</p>
-
-                    </td>
-
-                    <td>
-                        <h6 class="pd-top">$19.00 </h6>
-                    </td>
-                    <td class="quantity">
-                        <p class="mr-top"> <button class="minus-btn">-</button>1<button class="plus-btn">+</button> </p>
-                    </td>
-                    <td>
-                        <h6 class="float-left pd-top">$19.00 </h6>
-                        <i class="fas fa-times float-right "></i>
-                    </td>
-
-
-                </tr>
-                <tr>
-                    <td>
-                        <input type="textarea" class="coupon" placeholder="Coupon code" />
-                        <a href="z"><button type="submit" class="lst-rw-btn1 btn">Apply Coupon</button></a>
-
-                    </td>
-                    <td>
-
-                    </td>
-                    <td>
-                        <a asp-action="Index" asp-controller="Home">
-                            <button type="submit" class="lst-rw-btn2 btn">Back to Shop</button></a>
-                    </td>
-                    <td>
-                        <a asp-action="Billing" asp-controller="Cart">
-                            <button type="submit" class="lst-rw-btn3 btn">Proceed to Checkout</button></a>
-                    </td>
-                </tr>
+                    </tr>
+                }
 
 
             </tbody>
@@ -247,7 +199,7 @@
                         <h6>Subtotal</h6>
                     </td>
                     <td class="">
-                        <h6>$127.00 </h6>
+                        <h6>$@totalPrice </h6>
                     </td>
 
 
@@ -302,7 +254,7 @@
                     </td>
 
                     <td>
-                        <h6 class="">$139.05</h6>
+                        <h6 class="">$@(totalPrice-(decimal)12.05)</h6>
 
 
                     </td>
